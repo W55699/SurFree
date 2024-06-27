@@ -100,6 +100,7 @@ if __name__ == "__main__":
     ###############################
     print("Save Results")
     for image_i, o in enumerate(X):
+        image_i =image_i.cpu().numpy()
         o = o.cpu().numpy()
         o = np.array(o * 255).astype(np.uint8)
         img_o = Image.fromarray(o.transpose(1, 2, 0), mode="RGB")
